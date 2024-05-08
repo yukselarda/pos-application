@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+
+body {
+  font-family: "Electrolize", sans-serif;
+  margin: 0;
+  @apply bg-gray-50;
+}
+
+.categories {
+  padding-bottom: 8rem;
+}
+
+.space_widht {
+  width: 100% !important;
+}
+
+.ant-space-item {
+  width: 100%;
+}
+
+.ant-btn-primary {
+  background-color: #1677ff;
+}
+
+.statistic_table canvas {
+  width: 100% !important;
+
+}
+
+@media(max-width: 768px) {
+  .categories {
+    padding-bottom: 0rem !important;
+    height: 100%;
+    min-height: 8.75rem;
+  }
+
+  .home {
+    padding-bottom: 30px;
+  }
+}
+
+@media(min-width: 768px) {
+  body {
+    overflow: hidden;
+  }
+
+  .categories::-webkit-scrollbar {
+    display: none;
+  }
+
+  .categories {
+    padding-bottom: 0rem !important;
+    height: 100%;
+    min-height: 8.75rem;
+  }
+}
