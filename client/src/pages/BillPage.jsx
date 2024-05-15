@@ -4,7 +4,8 @@ import PrintBill from '../components/bills/PrintBill';
 import { useEffect, useState } from "react";
 function BillPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [billItems, setBillItems] = useState()
+    const [billItems, setBillItems] = useState([]);
+    const [customer, setCustomer] = useState();
 
     useEffect(() => {
         const getBills = async () => {
@@ -18,7 +19,7 @@ function BillPage() {
             }
         };
 
-        getBills()
+        getBills();
     }, []);
 
     const columns = [
@@ -38,7 +39,7 @@ function BillPage() {
             key: "createdAt",
             render: (text) => {
                 return <span>{text ? text.substring(0, 10) : "-"}</span>
-            }
+            },
         },
         {
             title: "Ödeme Yöntemi",
@@ -57,9 +58,20 @@ function BillPage() {
             title: "Actions",
             dataIndex: "action",
             key: "action",
-            render: (text) => {
-                return <Button type="link" className="pl-0" onClick={() => setIsModalOpen(true)}>Yazdır</Button>
-            }
+            render: (_, record) => {
+                return (
+                    <Button
+                        type="link"
+                        className="pl-0"
+                        onClick={() => {
+                            setIsModalOpen(true);
+                            setCustomer(record);
+                        }}
+                    >
+                        Yazdır
+                    </Button>
+                );
+            },
         },
 
     ];
@@ -72,7 +84,7 @@ function BillPage() {
                 <Table dataSource={billItems} columns={columns} bordered pagination={false} />
 
             </div>
-            <PrintBill isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+            <PrintBill isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} customer={customer} />
         </>
     )
 }
