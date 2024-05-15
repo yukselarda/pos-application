@@ -18,6 +18,7 @@ router.get("/get-all", async (req, res) => {
 router.post("/add-bill", async (req, res) => {
     try {
         console.log(req.body)
+        req.body.createdAt = new Date();
         const newBill = new Bill(req.body)
         await newBill.save();
         res.status(200).json("Eklendi");
