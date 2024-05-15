@@ -3,6 +3,8 @@ import { SearchOutlined, HomeOutlined, ShoppingCartOutlined, CopyOutlined, UserO
 import { Input, Badge } from 'antd'
 import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux";
+import "./index.css";
+
 function Header() {
     const cart = useSelector((state) => state.cart);
 
