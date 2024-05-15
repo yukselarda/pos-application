@@ -31,7 +31,7 @@ const PrintBill = ({ isModalOpen, setIsModalOpen, customer }) => {
                                     <p className="font-bold text-slate-700">Fatura Numarası:</p>
                                     <p>000{Math.floor(Math.random() * 100)}</p>
                                     <p className="font-bold text-slate-700 mt-2">Veriliş Tarihi:</p>
-                                    <p>{customer ? createdAt.substring(0, 10) : "-"}</p>
+                                    {/* <p>{customer ? createdAt.substring(0, 10) : "-"}</p> */}
                                 </div>
                                 <div className="text-md sm:block hidden text-slate-500">
                                     <p className="font-bold text-slate-700">Şartlar:</p>
