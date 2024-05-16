@@ -2,8 +2,6 @@ const User = require("../models/User");
 const express = require("express")
 const router = express.Router();
 
-
-//! Get All Product
 router.get("/get-all", async (req, res) => {
     try {
         const users = await User.find();
@@ -13,7 +11,6 @@ router.get("/get-all", async (req, res) => {
     }
 })
 
-//! Get a Product
 router.get("/", async (req, res) => {
     const userId = req.body.userId;
     try {

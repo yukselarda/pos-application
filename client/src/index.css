@@ -31,6 +31,10 @@ body {
 
 }
 
+.products::-webkit-scrollbar {
+  display: none;
+}
+
 @media(max-width: 768px) {
   .categories {
     padding-bottom: 0rem !important;
