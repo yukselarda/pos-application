@@ -3,7 +3,7 @@
 }
 
 .menu-link {
-    @apply flex flex-col hover:text-[#40a9ff] transition-all gap-y-[2px];
+    @apply flex flex-col hover:text-[#40a9ff] transition-all gap-y-[2px] items-center;
 }
 
 .menu-link.active {
